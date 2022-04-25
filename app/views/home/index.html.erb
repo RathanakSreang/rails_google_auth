@@ -1,0 +1,11 @@
+<div class="p-3 text-center">
+  <% if user_signed_in? %>
+    <h1>You're logged in! Welcome to the Dashboard!</h1>
+    <h3>Signed user: <%= current_user.email %></h3>
+    <%= link_to "sign out", sign_out_path, class: "btn btn-danger" %>
+  <% else %>
+    <h2>You're Logged out! Log in to the Dashboard</h2>
+    <%= link_to "sign in", sign_in_path, class: "btn btn-primary" %>
+    <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+  <% end %>
+</div>
