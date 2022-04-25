@@ -2,6 +2,10 @@
   <% if user_signed_in? %>
     <h1>You're logged in! Welcome to the Dashboard!</h1>
     <h3>Signed user: <%= current_user.email %></h3>
+    <%= link_to "View my events", events_path, class: "mb-3" %>
+    <br/>
+    <div class="mb-3">
+    </div>
     <%= link_to "sign out", sign_out_path, class: "btn btn-danger" %>
   <% else %>
     <h2>You're Logged out! Log in to the Dashboard</h2>
